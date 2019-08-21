@@ -1,0 +1,945 @@
+$app-width: 1360px;
+$navbar-background-color: white;
+$main-section-background-color-type-one: white;
+$main-section-background-color-type-two: rgba(246, 244, 244, 0.4);
+$sub-section-background-color: rgba(246, 244, 244, 0.8);
+$z-index: (
+  modal: 1000,
+  navigation: 500
+);
+/******************main****************/
+.app {
+  position: relative;
+  width: $app-width;
+  margin: auto;
+  font-family: "Roboto";
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+/*********************** common for all main sections***************/
+
+.a-tag-div{
+  // display: block;
+}
+.small-vertical-seperator {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  margin: 8px 10px;
+  width: 2px;
+  height: 41px;
+  border: solid 1px #eae8e8;
+}
+
+.main-section-seperator {
+  width: 1359px;
+  height: 2px;
+  border: solid 1px #eae8e8;
+}
+
+.main-section-header-title {
+  height: 78px;
+  font-size: 28px;
+  line-height: 1.64;
+  text-align: center;
+  color: #001919;
+}
+
+.main-section-header-info {
+  width: 940px;
+  font-size: 16px;
+  line-height: 1.81;
+  text-align: center;
+  color: #001919;
+}
+
+/******************main section 1: app navbar ****************/
+/******************overriding bootstrap navbar default styles**********/
+#app-nav-bar {
+  padding: 0;
+  background-color: $navbar-background-color;
+  position: sticky;
+  top: 0;
+  z-index: map-get($z-index, navigation);
+  .navbar-collapse {
+    height: 59px;
+  }
+  .nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a4a4a;
+  }
+  .navbar-brand {
+    padding: 0;
+  }
+  .dropdown-menu.show {
+    display: none;
+  }
+}
+#navbar-left-aligned-items .nav-link {
+  margin: 7px 0px 0px 54px;
+}
+.navbar-brand .brand-logo {
+  margin: 11px 0 15px 30px;
+}
+.nav-bar-body-seperator {
+  box-shadow: 0 1px 2px 0 rgba(223, 223, 223, 0.5);
+  border: solid 1px #efefef;
+}
+
+#navbar-right-aligned-items {
+  position: absolute;
+  align-items: center;
+  right: 0;
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  .caret {
+    position: relative;
+    margin: 0 10px;
+  }
+}
+
+#add-user {
+  padding: 0;
+  width: 58px;
+  height: 58px;
+  background-color: #44496b;
+  position: relative;
+}
+
+#add-user-icon {
+  display: block;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/******************main section 2: event main info with carousel and event details ***********************/
+.event-main-info {
+  padding: 0px 96px;
+  background-color: $main-section-background-color-type-one;
+}
+.back-to-explore {
+  margin: 27px 0 0 0;  
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.86px;
+  color: #4e545c;
+}
+#arrow-down {
+  transform: rotate(90deg);
+}
+.event-details {
+  display: flex;
+  padding: 40px 0px 32px 0px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+  /******** carousel sub section *************/
+.event-carousel-container {
+  position: relative;
+  display: block;
+  width: 769px;
+  height: 433px;
+}
+
+#event-carousel-id{
+
+  .carousel-item {
+    border-radius: 0px;
+  }
+  .carousel-indicators {
+    margin: 0px;
+    li {
+      width: 137.8px;
+      height: 2px;
+      border-radius: 5px;
+      background-color: white;
+      margin-bottom: 10px;
+    }
+  }
+} 
+#mute-icon {
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  right: 70px;
+}
+#play-icon {
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  right: 30px;
+}
+  /******** event info sub section *************/
+.event-info {
+  width: 369px;
+  height: 433px;
+  padding: 24px;
+  background-color: $sub-section-background-color;
+}
+.event-info-header {  
+  font-size: 27px;  
+  line-height: 1.19;
+  letter-spacing: -0.7px;
+  color: #001919;
+}
+
+.foundation-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 12px auto 14px 3px;
+}
+
+#foundation-verification-status {
+  display: inline-block;
+  margin-left: 3px;
+}
+.foundation-rating {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px;
+  width: 30px;
+  height: 18px;
+  border-radius: 3px;
+  background-color: #ffcd09;  
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #ffffff;
+}
+.event-info-sub-item {
+  margin-bottom: 8px;  
+  font-size: 15px;        
+  color: #001919;
+}
+
+.event-info-sub-item-icon {
+  width: 13px;
+  height: 13px;
+  object-fit: contain;
+  margin-right: 12px;
+}
+
+#event-info-show-on-map {
+  margin-left: 10px;  
+  font-size: 15px;
+  font-weight: 500;  
+  color: #5e6595;
+  text-decoration: underline;
+}
+
+#event-info-requirments-seperator {
+  width: 370px;
+  height: 1px;
+  margin: 77px 0 0 -24px;
+  border: solid 1px rgba(234, 232, 232, 0.74);
+}
+.event-info-requirments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;  
+  font-size: 14px;
+  color: #001919;
+}
+
+#event-info-requirments-button {
+  width: 322px;
+  height: 48px;
+  border-radius: 2px;
+  margin: 12px 0px 8px 0px;
+  background-color: #ff7a49;  
+  font-size: 18px;
+  font-weight: 500;        
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  align-self: center;
+  outline: none;
+  border: none;
+}
+
+/******************main section 3: event additional details***********************/
+.event-additional-details {
+  background-color: $main-section-background-color-type-one;
+  display: flex;
+  padding: 0px 96px;
+  height: 90px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.event-additional-item-title {
+  position: relative;  
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.71;
+  color: #202020;
+}
+
+.event-additional-item-seperator {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 2px;
+  height: 41px;
+  border: solid 1px #eae8e8;
+}
+
+.event-additional-item-info {
+  font-size: 14px;
+  color: #001919;
+}
+
+.social-media-icon {
+  width: 32px;
+  height: 32px;  
+  margin-left: 11px;
+}
+.people-going {
+  width: 340px;
+}
+.people-going-icon {
+  width: 36px;
+  height: 36px;  
+  border: solid 2px #ffffff;
+  border-radius: 16px;
+  margin-left: -8px;
+}
+.number-of-people-going {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.31;
+  color: #4e5e5e;
+}
+.number-of-slots-left {
+  margin-left: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  color: #ff6127;
+}
+
+/******************main section 4: venue info and organizers details***********************/
+
+.venue-and-organizers {
+  display: flex;
+  flex-direction: row;
+  padding: 48px 96px;
+  background-color: $main-section-background-color-type-one;
+}
+.venue-info {
+  margin-right: 60px;
+}
+
+.venue-basic-info {
+  font-size: 16px;
+  line-height: 1.81;
+  color: #001919;
+}
+
+.venue-basic-info-continue-reading {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 16px;
+  color: #5e6595;
+  .caret{
+    margin-left: 5px;
+  }
+}
+
+.venue-facilities {
+  display: flex;
+  margin: 65px 0px 28px 0px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.venue-info-sub-head {
+  position: relative;
+  font-size: 18px;
+  margin-top: 11px;
+  font-weight: 500;
+  line-height: 1.33;
+  color: #202020;
+}
+
+.venue-info-sub-head-caret {
+  position: absolute;
+  right: 17px;
+}
+
+.venue-info-sub-info {
+  font-size: 16px;
+  margin-bottom: 35px;
+  line-height: 1.19;
+  color: #001919;
+}
+
+.venue-info-seperator {
+  width: 742px;
+  height: 1px;
+  margin-top: 12px;
+  border: solid 1px rgba(234, 232, 232, 0.74);
+}
+/********** organizers sub section************/
+.organizer-card {
+  width: 369px;
+  height: 114px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.organizer-card-role {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33;
+  color: #202020;
+}
+
+.organizer-card-body {
+  display: flex;
+  padding: 21px 0 0 8px;
+  flex-direction: row;
+  align-items: center;
+  font-size: 16px;
+  color: #001919;
+}
+.organizer-card-name {
+  margin-left: 12px;
+}
+.organizer-card-photo-container {
+  position: relative;
+}
+.organizer-card-rep-photo {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+}
+.organizer-card-contact-items-container {
+  display: inline-flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.organizer-card-contact-item {
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
+  margin-left: 8px;
+  background-color: #f6f4f4;
+}
+
+.organizer-card-contact-icon {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+  margin-top: 10px;
+  margin-left: 10px;
+  display: block;
+}
+
+.organizer-card-seperator {
+  width: 370px;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  border: solid 1px rgba(234, 232, 232, 0.74);
+}
+
+/************** event goals subsection************/
+.event-goals-info-oval {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  border: solid 1px #d0d1d1;
+  margin-left: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.21;
+  color: #4e5e5e;
+}
+
+.event-goals-info-text {
+  position: relative;
+  margin-left: 3px;
+  font-size: 12px;
+  color: #4e5e5e;
+}
+
+.event-goals-icon {
+  margin: 11px 7px 0 0;
+}
+
+/******************main section 5: what you will be doing ***********************/
+
+.what-you-will-do {
+  padding: 48px 96px 48px 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $main-section-background-color-type-two;
+}
+
+.what-you-will-do-body {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 6px;
+  padding-top: 8px;
+  width: 1170px;
+  margin-top: 24px;
+  border-radius: 3px;
+  box-shadow: 0 0 4px 0 rgba(0, 25, 25, 0.15);
+  background-color: #ffffff;
+}
+.what-you-will-do-item,
+.what-you-will-do-active-item {
+  display: flex;
+  flex-direction: row;
+  width: 320px;
+  align-items: center;
+  position: relative;
+  height: 70px;
+}
+
+.what-you-will-do-item-icon {
+  margin: 0px 31px 0px 41px;
+}
+
+.what-you-will-do-active-item {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33;
+  color: #5e6595;
+  position: relative;
+}
+
+.what-you-will-do-active-item-right-border {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  bottom: 2px;
+  right: -3px;
+  color: white;
+  font-size: 26px;
+  background-color: white;
+}
+.what-you-will-do-inactive-item {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33;
+  color: #9ca3a3;
+}
+
+.what-you-will-do-item-seperator {
+  position: absolute;
+  width: 320px;
+  height: 1px;
+  border: solid 1px #eae8e8;
+  bottom: 0px;
+}
+
+.what-you-will-do-item-info-seperator {
+  border: solid 1px #eae8e8;
+}
+.what-you-will-do-item-info {
+  margin-top: 62px;
+}
+.event-schedule-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.event-schedule-card-time {
+  text-align: center;
+  flex-basis: 174px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  color: #001919;
+}
+
+.event-schedule-card-time-info-seperator {
+  flex-basis: 27px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.event-schedule-card-time-info-seperator-outer-rectangle {
+  width: 27px;
+  height: 27px;
+  box-shadow: inset 0 1px 3px 0 rgba(78, 94, 94, 0.12);
+  background-color: #eae8e8;
+  border-radius: 13.5px;
+  overflow: auto;
+}
+.event-schedule-card-time-info-seperator-inner-rectangle {
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  background-color: #5e6595;
+  border-radius: 4px;
+  margin: 9.5px 0 0 9.5px;
+}
+.event-schedule-card-time-info-seperator-vertical-seperator {
+  width: 3px;
+  height: 110px;
+  margin: 0 12px;
+  border-radius: 23px;
+  box-shadow: inset 0 1px 3px 0 rgba(78, 94, 94, 0.12);
+  background-color: #eae8e8;
+}
+
+.event-schedule-card-info {
+  flex-basis: 404px;
+  margin-left: 24px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.event-schedule-card-time-range {
+  height: 28px;
+  font-size: 14px;
+  line-height: 1.57;
+  color: #9ca3a3;
+}
+
+.event-schedule-card-title {
+  height: 24px;
+  font-size: 18px;
+  color: #001919;
+}
+
+.event-schedule-card-text-content {
+  margin-top: 11px;
+  font-size: 14px;
+  line-height: 1.57;
+  color: #001919;
+}
+
+/******************main section 6: colleagues going ***********************/
+
+.colleagues-going {
+  display: flex;
+  padding: 48px 96px 48px 96px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-section-background-color-type-one;
+}
+
+.colleagues-going-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 37px;
+  grid-column-gap: 30px;
+}
+
+.colleague-card {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 370px;
+  height: 93px;
+  border-radius: 3px;
+  box-shadow: 0 0 4px 0 rgba(0, 25, 25, 0.15);
+  background-color: #ffffff;
+}
+.colleague-card-name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  color: #001919;
+}
+.colleague-card-designation {
+  margin-top: 3px;
+  font-size: 14px;
+  line-height: 1.29;
+  color: #9ca3a3;
+}
+
+.colleague-card-team-location {
+  margin-top: 3px;
+  font-size: 14px;
+  line-height: 1.29;
+  color: #4e5e5e;
+}
+.colleague-card-image-container {
+  padding: 16px;
+}
+
+.view-all-colleagues-button {
+  position: relative;
+  width: 152px;
+  height: 40px;
+  margin: 32px auto 0px auto;
+  border-radius: 3px;
+  border: solid 2px #5e6595;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: #44496b;
+}
+
+/******************main section 7: volunteer venue location***********************/
+.volunteer-venue-location {
+  padding: 48px 96px 48px 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $main-section-background-color-type-two;
+}
+
+.volunteer-venue-location-body {
+  display: flex;
+  flex-direction: row;
+  border-radius: 3px;
+  box-shadow: 0 0 4px 0 rgba(0, 25, 25, 0.15);
+  background-color: #ffffff;
+}
+
+.volunteer-venue-location-info {
+  width: 329px;
+  margin: 42px 118px 39px 67px;
+}
+
+#volunteer-venue-location-info-item-address {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33;
+  color: #202020;
+}
+
+.volunteer-venue-location-info-item-label {
+  margin-bottom: 7px;
+  margin-top: 10px;
+  font-size: 18px;
+  color: #001919;
+}
+
+.volunteer-venue-location-info-item-value {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #001919;
+}
+
+.volunteer-venue-location-map {
+  position: relative;
+  width: 630px;
+  height: 290px;
+  margin: 28px 25px 28px 0px;
+}
+.volunteer-venue-location-map-get-directions-button {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 218px;
+  height: 40px;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 3px;
+  border: solid 2px #5e6595;
+  background-color: #ffffff;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  color: #44496b;
+}
+
+/******************main section 8: donate impact share ***********************/
+.donate-impact-share {
+  padding: 48px 96px 48px 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $main-section-background-color-type-one;
+}
+
+.donate-impact-share-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.donate-impact-share-header-image-container {
+  width: 560;
+  height: 315px;
+  margin-right: 22px;
+}
+.donate-goods-to-need {
+  width: 589px;
+  height: 313px;
+  padding: 42px 89px 42px 42px;
+  background-color:$sub-section-background-color;
+}
+.donate-goods-to-need-header-title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.18;
+  color: #001919;
+}
+
+.donate-goods-to-need-info {
+  margin-top: 39px;
+  font-size: 14px;
+  line-height: 1.29;
+  color: #4e5e5e;
+}
+.support-info {
+  margin-top: 24px;
+}
+.support-info-numbers {
+  font-size: 20px;
+  font-weight: 500;
+  color: #4e5e5e;
+}
+.support-info-text {
+  margin-left: 11px;
+  font-size: 14px;
+  color: #4e5e5e;
+}
+
+.no-of-supporters {
+  margin-left: 85px;
+}
+#donate-now-button {
+  margin-top: 31px;
+  width: 160px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #ff7a49;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  outline: none;
+  border: none;
+}
+
+/*****************main section 9:more opportunities more impact ***********************/
+.more-opportunities-more-impact {
+  padding: 48px 96px 90px 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 235px;
+  background-color: $main-section-background-color-type-two;
+}
+
+.more-opportunities-more-impact-body {
+  display: flex;
+  flex-direction: row;
+}
+.more-opportunities-more-impact-event-card {
+  padding-right: 30px;
+}
+
+.more-opportunities-more-impact-event-card-info {
+  padding: 25px 0 0 12px;
+}
+
+.more-opportunities-more-impact-event-card-name {
+  width: 310px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #001919;
+}
+
+.more-opportunities-more-impact-event-card-info-item {
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.more-opportunities-more-impact-event-card-info-item-icon {
+  width: 14px;
+  height: 16px;
+  object-fit: contain;
+}
+.more-opportunities-more-impact-event-card-info-item-text {
+  margin-left: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4e5e5e;
+}
+
+.more-opportunities-more-impact-event-card-slots-left {
+  margin-top: 10px;
+}
+.more-opportunities-more-impact-event-card-slots-left-text {
+  color: #ff7a49;
+}
+
+.more-opportunities-more-impact-event-card-last-date {
+  margin-left: 20px;
+  font-size: 14px;
+  text-align: right;
+  color: #4e5e5e;
+}
+
+/**************************main section 10:main announcements section ***************/
+
+.announcements {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 332px;
+  height: 62px;
+  right: 45px;
+  bottom: 0;
+  padding: 15px 19px 22px 28px;
+  border-radius: 3px;
+  box-shadow: 0 2px 79px 0 rgba(0, 25, 25, 0.15);
+  background-color: #ffffff;
+}
+
+.announcements-icon {
+  margin-right: 16px;
+}
+
+.announcements-text {
+  margin-right: 7px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.09;
+  color: #202020;
+}
+
+.announcements-unread-container {
+  display: inline-block;
+  position: relative;
+  width: 21.8px;
+  height: 21.8px;
+  background-color: #3cc19f;
+  border-radius: 11px;
+  margin-right: 26px;
+}
+
+.announcements-unread-number {
+  position: absolute;
+  width: 7px;
+  height: 14px;
+  margin: 3px 0px 0px 7.8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+}
